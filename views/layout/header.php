@@ -14,3 +14,13 @@
         <h1 class="text-primary">Мій блог</h1>
         <hr>
     </header>
+
+    <form action="index.php" method="GET" class="d-flex gap-2">
+        <input type="text" name="search" class="form-control" placeholder="Пошук постів..." 
+        value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+        <button type="submit" class="btn btn-outline-primary">Шукати</button>
+        <?php if (!empty($_GET['search'])): ?>
+            <a href="index.php" class="btn btn-outline-secondary">Скинути</a>
+        <?php endif; ?>
+    </form>
+    <hr>
